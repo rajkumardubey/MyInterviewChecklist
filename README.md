@@ -85,7 +85,7 @@
 
 - Type of JDBC
 
-### Hybernate
+### Hibernate
 
 - get vs load
 - cascade
@@ -104,19 +104,33 @@
 ### Database
 
 - SQL Queries
-  - Inner Queires
+  - Inner Queries
   - Inner vs Outer Join
   - Rank
 - DELETE vs TRUNCATE
-- Sharding
+- CAP Theorem
+- ACID properties
+- ACID vs BASE
+- Partitioning & Sharding
+    * Consistent Hashing
+- Relational DB Vs NoSQL
 - NoSQL
-
-### Cahcing
+    * Key value
+    * Wide column
+    * Document Based
+    * Graph based
+-
+ 
+### Caching
 
 - All type of Cache managers
 - Mem Cache
 - Radis Cache
 - Http Cache
+- Cache object Vs Application object?
+- What is cache callback in cache?
+- fragment caching
+- DataCaching
 
 ### Messaging
 
@@ -142,9 +156,10 @@
 - Docker
   - What is docker
   - commands
-  - docker  vs vertualizations
-- Kubernetese
-
+  - docker  vs virtualization
+- Kubernetes
+- Vertical scaling Vs Horizontal Scaling
+ 
 ### System Design
 
 - URL Shortner
