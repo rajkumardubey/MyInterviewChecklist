@@ -6,8 +6,19 @@ package self.learning.interview.coding;
     Words can appear multiple times in any order and should be case insensitive.
     E.g. for the document="Example we just made up" shortestDistance( document, "we", "just" ) == 4
  */
-class Solution {
-    public double shortestDistance(final String document, String word1, String word2) {
+public class DistanceBetweenTwoWords {
+    private static final String document;
+
+    static {
+        final StringBuffer sb = new StringBuffer();
+        sb.append("In publishing and graphic design, lorem ipsum is a filler text commonly used to demonstrate the graphic elements");
+        sb.append(" lorem ipsum text has been used in typesetting since the 1960s or earlier, when it was popularized by advertisements");
+        sb.append(" for Letraset transfer sheets. It was introduced to the Information Age in the mid-1980s by Aldus Corporation, which");
+
+        document = sb.toString();
+    }
+
+    public static double shortestDistance(final String document, String word1, String word2) {
         final String[] words = document.split("[,. ]");
 
         int wordCount = 0;
@@ -30,30 +41,14 @@ class Solution {
         return shortestDistance;
     }
 
-}
-
-
-public class DistanceBetweenTwoWords {
-    private static final String document;
-
-    static {
-        final StringBuffer sb = new StringBuffer();
-        sb.append("In publishing and graphic design, lorem ipsum is a filler text commonly used to demonstrate the graphic elements");
-        sb.append(" lorem ipsum text has been used in typesetting since the 1960s or earlier, when it was popularized by advertisements");
-        sb.append(" for Letraset transfer sheets. It was introduced to the Information Age in the mid-1980s by Aldus Corporation, which");
-
-        document = sb.toString();
-    }
-
-    public static boolean pass(Solution sol) {
-        return sol.shortestDistance(document, "and", "graphic") == 6d &&
-                sol.shortestDistance(document, "transfer", "it") == 14d &&
-                sol.shortestDistance(document, "Design", "filler") == 25d;
+    public static boolean pass() {
+        return shortestDistance(document, "and", "graphic") == 6d &&
+                shortestDistance(document, "transfer", "it") == 14d &&
+                shortestDistance(document, "Design", "filler") == 25d;
     }
 
     public static void main(String[] args) {
-        final Solution sol = new Solution();
-        if (pass(sol)) System.out.println("Pass");
+        if (pass()) System.out.println("Pass");
         else System.out.println("Some Fail");
     }
 
